@@ -38,7 +38,7 @@ public class Main {
 		}	*/
 			
 			//Zadatak za Tamaru
-			// Ako si krenula vec za pacijente ja cu doktora...
+			// 
 		runDemoDoctor();
 			
 			// 
