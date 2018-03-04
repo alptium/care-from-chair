@@ -54,12 +54,9 @@ public class Patient {
 		public String getName() {
 		return name;
 		}
-		public void setParentName(String parentName) {
-		this.parentName = parentName;
-		}
 		public String getParentName() {
-		return name;
-		}
+			return parentName;
+			}
 		public void setSurname(String surname) {
 		this.surname = surname;
 		}

@@ -1,6 +1,7 @@
 package healthcare;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 	
@@ -39,10 +40,10 @@ public class Main {
 			
 			//Zadatak za Tamaru
 			// 
-		runDemoDoctor();
+		//runDemoDoctor();
 			
 			// 
-		//runDemoPatient();
+		runDemoPatient();
 			
 			//Zadatak za Gorana
 		//runDemoMedicine();
@@ -65,8 +66,63 @@ public class Main {
 
 		}
 		private static void runDemoPatient() {
+			
 			System.out.println("Welcome to the page PATIENT");
+			System.out.println();
+			System.out.println("For registration, insert personal data for a patient...");
+			System.out.println();
+			
+			try(Scanner sc = new Scanner(System.in)){
+				
+				System.out.println("Enter patient name");
+				String name = sc.next();
+				
+				System.out.println("Enter patient parent's name");
+				String parentName = sc.next();
+				
+				System.out.println("Enter patient surname");
+				String surname = sc.next();
+				
+				System.out.println("Enter patient jmbg");
+				String jmbg = sc.next();
+				
+				System.out.println("Enter patient date od birth");
+				String dateOfBirth = sc.next();
+				
+				System.out.println("Enter patient place of birth");
+				String placeOfBirth = sc.next();
+				
+				System.out.println("Enter patient gender. Choose M or F");
+				String gender = sc.next();
+				
+				System.out.println("Enter patient ID");
+				String ID = sc.next();
+				
+				System.out.println("Enter patient address");
+				String address = sc.next();
+				
+				System.out.println("Enter the name of town where patient lives");
+				String town = sc.next();
+				
+				System.out.println("Enter patient citizenship");
+				String citizenship = sc.next();
+				
+				System.out.println("Enter patient phoneNumber");
+				String phoneNumber = sc.next();
+				
+				Patient patient = new Patient(name, parentName, surname, jmbg, dateOfBirth, placeOfBirth, gender, ID, address, town, citizenship, phoneNumber  );
+				System.out.println("You registration is done. Plese check the data once more.");
+				System.out.println("Patient name and surname:" + patient.getName() + "\t" + patient.getSurname() );
+				//System.out.println("Patient jmbg" +  );
+				System.out.println("Date and place of birth:" + patient.getPlaceOfBirth() + "\t" + patient.getDateOfBirth() );
+				System.out.println("Gender:" + patient.getGender());
+				System.out.println("Healcare card ID:" + patient.getID());
+				System.out.println("Address" + patient.getAddress() + "\t" + patient.getTown() );
+				System.out.println("Patient name and surname" + patient.getName() + "\t" + patient.getSurname() );
+				System.out.println("Citizenship" + patient.getCitizenship() );
+				System.out.println("Patient phone number" + patient.getPhoneNumber() );
 
+			}
 		}
 		private static void runDemoMedicine() {
 			System.out.println("Welcome to the page MEDICINE");
