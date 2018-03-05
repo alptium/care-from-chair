@@ -30,8 +30,16 @@ public class Patient {
 		this.citizenship = citizenship;
 		this.phoneNumber = phoneNumber;
 		
-
 	}
+	
+	public Patient(String name, String parentName, String surname, String jmbg, String ID) {
+		this.name = name;
+		this.parentName = parentName;
+		this.surname = surname;
+		this.jmbg = jmbg;
+		this.ID = ID;
+	}
+	
 	protected void checkJmbg(String jmbg) {
 		
 		if (jmbg.length()!= 13) {

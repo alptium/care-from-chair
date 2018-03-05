@@ -15,10 +15,9 @@ public class Main {
 		System.out.println("If you want to go to < PATIENT > page, enter PA");
 		System.out.println("If you want to go to < MEDICINE > page, enter M");
 		System.out.println("If you want to go to < PHARMACIES > page, enter PH");
-		
-		System.out.println("Please, enter the path for your choise!");
-		
+		System.out.println("If you want to schedule a treatment, enter SC");
 
+		System.out.println("Please, enter the path for your choise!");
 		
 		String choise = sc.next();
 		
@@ -30,6 +29,8 @@ public class Main {
 			//runDemoMedicine();		
 		} else if(choise.equals("PH") && choise.equals("ph")) {
 			//runDemoPharmacies();
+		} else if(choise.equals("SC") && choise.equals("sc")) {
+			//runDemoScheduling();
 		} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph")) {
 			System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
 			
@@ -39,32 +40,32 @@ public class Main {
 		}	*/
 			
 			//Zadatak za Tamaru
-			// 
-		//runDemoDoctor();
-			
-			// 
-		runDemoPatient();
+			 
+		    runDemoDoctor();
+		
+		//runDemoPatient();
+		//runDemoScheduling();
 			
 			//Zadatak za Gorana
-		//runDemoMedicine();
+		    //runDemoMedicine();
 			
 			//Zadatak za Katarinu
-		//runDemoPharmacies();
+		    //runDemoPharmacies();
 			
 			/* Ovaj prvi deo je komentarisan  posto nisam jos
 			 * uvek zavrsila pa da vas ne ometa dok proveravate svoj kod.Uklonite komendar sa svog runDemo-a 
 			 * da biste mogli da radite(Kao sto je runDemoDoctor).
 			*/
 			
-		}
+	}
 		
-		}
-	
+}
 		
 		private static void runDemoDoctor() {
+			
 			System.out.println("Welcome to the page DOCTOR");
-
 		}
+		
 		private static void runDemoPatient() {
 			
 			System.out.println("Welcome to the page PATIENT");
@@ -117,10 +118,9 @@ public class Main {
 				System.out.println("Date and place of birth:" + patient.getPlaceOfBirth() + "\t" + patient.getDateOfBirth() );
 				System.out.println("Gender:" + patient.getGender());
 				System.out.println("Healcare card ID:" + patient.getID());
-				System.out.println("Address" + patient.getAddress() + "\t" + patient.getTown() );
-				System.out.println("Patient name and surname" + patient.getName() + "\t" + patient.getSurname() );
-				System.out.println("Citizenship" + patient.getCitizenship() );
-				System.out.println("Patient phone number" + patient.getPhoneNumber() );
+				System.out.println("Address:" + patient.getAddress() + "\t" + patient.getTown() );
+				System.out.println("Citizenship:" + patient.getCitizenship() );
+				System.out.println("Patient phone number:" + patient.getPhoneNumber() );
 
 			}
 		}
@@ -132,5 +132,63 @@ public class Main {
 			System.out.println("Welcome to the page PHARMACIES");
 
 		}
+		private static void runDemoScheduling( ) {
+			
+			System.out.println("Welcome to the page SCHEDULING");
+			System.out.println("Please, insert necessary data in order to schedule your treatment...");
+			
+			//while (true) {
+				
+			try(Scanner sc = new Scanner(System.in)){
+				
+				System.out.println("Enter patient name");
+				String name = sc.next();
+				
+				System.out.println("Enter patient parent's name");
+				String parentName = sc.next();
+				
+				System.out.println("Enter patient surname");
+				String surname = sc.next();
+				
+				System.out.println("Enter patient jmbg");
+				String jmbg = sc.next();
+				
+				System.out.println("Enter patient ID");
+				String ID = sc.next();
+				
+				Patient scheduling = new Patient(name, parentName, surname, jmbg, ID );
+
+				System.out.println("You registration is done. Plese check the data once more.");
+				System.out.println("Patient name and surname:" + scheduling.getName() + "\t" + scheduling.getSurname() );
+				//System.out.println("Patient jmbg" +  );
+				System.out.println("Healcare card ID:" + scheduling.getID());
+				
+				System.out.println("Please, check your data");
+				System.out.println("If it is correct, enter yes");
+				System.out.println("If it is incorrect, enter no and fill in the form again");
+
+				/*String check = sc.next(); 
+				
+				if (check.equals("yes")) {
+					break;
+				} else while (!check.equals("no") && !check.equals("yes")) {
+					System.out.println("You entered the wrong word, plase response with yes or no!");
+					System.out.println("Is the data correct? yes/no");
+					System.out.println();
+					check = sc.next();
+				}
+				
+				 if (check.equals("yes")) {
+						break;
+						
+				}
+							 
+			}*/
+			
+		}
+			
+	}
+		
 }
+
 	
