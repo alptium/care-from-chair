@@ -1,7 +1,6 @@
 package com.alptium.healthcare;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
 	
@@ -20,40 +19,26 @@ public class Main {
 		System.out.println("Please, enter the path for your choise!");
 		
 		String choise = sc.next();
-		
+			  
 		if(choise.equals("D") || choise.equals("d")) {
 			 runDemoDoctor(); 
 		} else if(choise.equals("PA") || choise.equals("pa") ) {
-			runDemoPatient();
+			 runDemoPatient();
 		} else if(choise.equals("M") || choise.equals("m")) {
-			runDemoMedicine();		
+			 runDemoMedicine();		
 		} else if(choise.equals("PH") || choise.equals("ph")) {
-			runDemoPharmacies();
+			 runDemoPharmacie();
 		} else if(choise.equals("SC") || choise.equals("sc")) {
-			runDemoScheduling();
+			 runDemoScheduling();
 		} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph")) {
 			System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
 			
-			System.out.println("Please, TRY AGAIN");
-			System.out.println();
-			choise = sc.next();
-		}	
-			
-			//Zadatak za Tamaru
-			 
-		   // runDemoDoctor();
-		
-		//runDemoPatient();
-		//runDemoScheduling();
-			
-			//Zadatak za Gorana
-		    //runDemoMedicine();
-			
-			//Zadatak za Katarinu
-		    //runDemoPharmacies();
-			
-			
-	}
+			 System.out.println("Please, TRY AGAIN");
+			 System.out.println();
+			 choise = sc.next();
+		 }
+		 
+	}		
 		
 }
 		
@@ -128,25 +113,29 @@ public class Main {
 				
 				Patient patient = new Patient(name, parentName, surname, jmbg, dateOfBirth, placeOfBirth, gender, ID, address, town, citizenship, phoneNumber  );
 				System.out.println("You registration is done. Plese check the data once more.");
-				System.out.println("Patient name and surname:" + patient.getName() + "\t" + patient.getSurname() );
+				System.out.println("Patient name and surname: " + patient.getName() + "\t" + patient.getSurname() );
 				//System.out.println("Patient jmbg" +  );
-				System.out.println("Date and place of birth:" + patient.getPlaceOfBirth() + "\t" + patient.getDateOfBirth() );
-				System.out.println("Gender:" + patient.getGender());
-				System.out.println("Healcare card ID:" + patient.getID());
-				System.out.println("Address:" + patient.getAddress() + "\t" + patient.getTown() );
-				System.out.println("Citizenship:" + patient.getCitizenship() );
-				System.out.println("Patient phone number:" + patient.getPhoneNumber() );
+				System.out.println("Date and place of birth: "+ patient.getPlaceOfBirth() + "\t" + patient.getDateOfBirth());
+				System.out.println("Gender: " + patient.getGender());
+				System.out.println("Healcare card ID: " + patient.getID());
+				System.out.println("Address: " + patient.getAddress() + "\t" + patient.getTown() );
+				System.out.println("Citizenship: " + patient.getCitizenship() );
+				System.out.println("Patient phone number: " + patient.getPhoneNumber() );
 
 			}
 		}
+		
 		private static void runDemoMedicine() {
+
 			System.out.println("Welcome to the page MEDICINE");
 
 		}
-		private static void runDemoPharmacies() {
+		
+		private static void runDemoPharmacie() {
 			System.out.println("Welcome to the page PHARMACIES");
 
 		}
+		
 		private static void runDemoScheduling( ) {
 			
 			System.out.println("Welcome to the page SCHEDULING");
@@ -174,9 +163,9 @@ public class Main {
 				Patient scheduling = new Patient(name, parentName, surname, jmbg, ID );
 
 				System.out.println("You registration is done. Plese check the data once more.");
-				System.out.println("Patient name and surname:" + scheduling.getName() + "\t" + scheduling.getSurname() );
-				//System.out.println("Patient jmbg" +  );
-				System.out.println("Healcare card ID:" + scheduling.getID());
+				System.out.println("Patient name and surname: " + scheduling.getName() + "\t" + scheduling.getSurname() );
+				//System.out.println("Patient jmbg: " +  );
+				System.out.println("Healcare card ID: " + scheduling.getID());
 				
 				System.out.println("Please, check your data");
 				System.out.println("If it is correct, enter yes");
