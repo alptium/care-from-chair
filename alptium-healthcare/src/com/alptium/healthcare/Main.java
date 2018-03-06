@@ -1,4 +1,4 @@
-package healthcare;
+package com.alptium.healthcare;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -22,15 +22,15 @@ public class Main {
 		String choise = sc.next();
 		
 		if(choise.equals("D") || choise.equals("d")) {
-			 //runDemoDoctor(); 
+			 runDemoDoctor(); 
 		} else if(choise.equals("PA") || choise.equals("pa") ) {
-			//runDemoPatient();
+			runDemoPatient();
 		} else if(choise.equals("M") || choise.equals("m")) {
-			//runDemoMedicine();		
+			runDemoMedicine();		
 		} else if(choise.equals("PH") || choise.equals("ph")) {
-			//runDemoPharmacies();
+			runDemoPharmacies();
 		} else if(choise.equals("SC") || choise.equals("sc")) {
-			//runDemoScheduling();
+			runDemoScheduling();
 		} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph")) {
 			System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
 			
@@ -41,7 +41,7 @@ public class Main {
 			
 			//Zadatak za Tamaru
 			 
-		    runDemoDoctor();
+		   // runDemoDoctor();
 		
 		//runDemoPatient();
 		//runDemoScheduling();
@@ -60,6 +60,25 @@ public class Main {
 		private static void runDemoDoctor() {
 			
 			System.out.println("Welcome to the page DOCTOR");
+			System.out.println("Welcome to our hospital");
+			System.out.println("Follow the instructions and complete our application:");
+			try(Scanner sc = new Scanner(System.in)){
+				
+				System.out.println("Please enter your firstname:");
+				String firstName = sc.next();
+				System.out.println("Please enter your lastname:");
+				String lastName = sc.next();
+				System.out.println("Please enter your birthyear:");
+				int birthYear=sc.nextInt();
+				System.out.println("Are you employed full-time:");
+				boolean isFullTimeEmployee = sc.nextBoolean();
+				System.out.println("Please enter your specialization:");
+				String specialization = sc.next();
+				System.out.println("Please enter your qualification:");
+				String qualification = sc.next();
+				
+				Doctor doctor = new Doctor(firstName, lastName, birthYear, isFullTimeEmployee, specialization, qualification);
+			}
 		}
 		
 		private static void runDemoPatient() {
@@ -186,5 +205,3 @@ public class Main {
 	}
 		
 }
-
-	
