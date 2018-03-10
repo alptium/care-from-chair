@@ -30,7 +30,7 @@ public class Main {
 			 runDemoPharmacie();
 		} else if(choise.equals("SC") || choise.equals("sc")) {
 			 runDemoScheduling();
-		} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph")) {
+		} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc")) {
 			System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
 			
 			 System.out.println("Please, TRY AGAIN");
