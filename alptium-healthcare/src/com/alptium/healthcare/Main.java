@@ -63,6 +63,12 @@ public class Main {
 				String qualification = sc.next();
 				
 				Doctor doctor = new Doctor(firstName, lastName, birthYear, isFullTimeEmployee, specialization, qualification);
+				System.out.println("Your registration is done. Plese check the data once more.");
+				System.out.println("Your firstname and lastname:" + doctor.getFirstName() + "\t" + doctor.getLastName() );
+				System.out.println("Year of birth:" + doctor.getBirthyear());
+				System.out.println("You are employed full-time:" + doctor.getisFullTimeEmployee() );
+				System.out.println("Your specialization:" + doctor.getSpecialization());
+				System.out.println("Your qualification:" + doctor.getQualification());
 			}
 		}
 		
