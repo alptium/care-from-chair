@@ -8,7 +8,7 @@ public class Main {
 			
 		try(Scanner sc = new Scanner(System.in)) {
 		
-		System.out.println("Welcome to Healthcare application");
+		System.out.println("Welcome to Healthcare application!");
 		System.out.println("Now, you'll have to choose the option you need!");
 		System.out.println("If you want to go to < DOCTOR > page, enter D");
 		System.out.println("If you want to go to < PATIENT > page, enter PA");
