@@ -1,7 +1,7 @@
-package com.alptium.healthcare;
+package healthcare;
 
 public class Pharmacie {
-	private String nameOfPharmacie;
+	private String name;
 	private int registerNumber; 
 	private String city;
 	private String cityMunicipality;
@@ -10,8 +10,8 @@ public class Pharmacie {
 	private String onlineShoping; 
 	private String nameOfOwner;
 	
-    public runDemoPharmacie (String nameOfPharmacie, int registerNumber, String city, String cityMunicipality, String phoneNumber, String address, String onlineShoping, String nameOfOwner) {
-        this.nameOfPharmacie = name;
+    public Pharmacie(String name, int registerNumber, String city, String cityMunicipality, String phoneNumber, String address, String onlineShoping, String nameOfOwner) {
+        this.name = name;
         this.registerNumber = registerNumber;
         this.city = city;
         this.cityMunicipality = cityMunicipality;
@@ -21,12 +21,12 @@ public class Pharmacie {
         this.nameOfOwner = nameOfOwner;
     }
 
-    public String getNameOfPharmacie() {
-        return nameOfPharmacie;
+    public String getName() {
+        return name;
     }
 
-    public void setName(String nameOfPharmacie) {
-        this.nameOfPharmacie = nameOfPharmacie;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getRegisterNumber() {

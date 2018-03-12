@@ -261,12 +261,38 @@ public class Main {
 		
 		private static void runDemoPharmacie() {
 			
-			System.out.println("Welcome to the page PHARMACIES");
-			//TO DO basic input/output
+			System.out.println("Welcome to the page PHARMACIE");
+			System.out.println("Follow the instructions and complete our application:");
 			
-			System.out.println();
-			System.out.println();
-
+			try(Scanner sc = new Scanner(System.in)){
+				
+				System.out.println("Please enter your Pharmacie name:");
+				String nameOfPharmacie = sc.next();
+				System.out.println("Please enter registration number of Pharmacie:");
+				String registrarNumber = sc.nextInt();
+				System.out.println("Please enter the city where your Pharmacie is located:");
+				int city=sc.nextInt();
+				System.out.println("Please enter the cityMunicipality  where your Pharmacie is located:");
+				boolean cityMunicipality  = sc.nextBoolean();
+				System.out.println("Please enter phone number of your Pharmacie:");
+				String phoneNumber= sc.next();
+				System.out.println("Please enter your adress of your Pharmacie:");
+				String address = sc.next();
+				System.out.println("Please confirm if your Pharmacie have online shoping option");
+				String onlineShoping = sc.next();
+				System.out.println("Please enter name of owner:");
+				String nameOfOwner  = sc.next();
+				
+				Pharmacie pharmacie = new Pharmacie(String nameOfPharmacie, int registerNumber, String city, String cityMunicipality, String phoneNumber, String address, String onlineShoping, String nameOfOwner);
+				System.out.println("Your registration is done. Plese check the data once more.");
+				System.out.println("Your name of Pharmacie:" + pharmacie.getNameOfPharmacie() );
+				System.out.println("Your registar number is:" + pharmacie.getRegisterNumber()());
+				System.out.println("City and cityMuniciplatity of Phramacie is:" + pharmacie.setCity() + pharmacie.getCityMunicipality());
+				System.out.println("Phone number and adress of your Pharmacie is:" + pharmacie.getPhoneNumber() + pharmacie.getAddress());
+				System.out.println("Your Pharmacie has online shoping option:" + pharmacie.getOnlineShoping());
+				System.out.println("Name of owner is:" + pharmacie.getNameOfOwner());
+	
+				
 			try(Scanner scc = new Scanner(System.in)) {
 				
 				System.out.println("If your data is coorect and you wish to continue, choose another option!");
@@ -275,7 +301,7 @@ public class Main {
 				System.out.println("If you want to go to < DOCTOR > page, enter D");
 				System.out.println("If you want to go to < PATIENT > page, enter PA");
 				System.out.println("If you want to go to < MEDICINE > page, enter M");
-				System.out.println("If you want to go to < PHARMACIES > page, enter PH");
+				System.out.println("If you want to go to < PHARMACIE > page, enter PH");
 				System.out.println("If you want to schedule a treatment, enter SC");
 
 				System.out.println("Please, enter the path for your choise!");
