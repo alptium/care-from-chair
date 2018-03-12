@@ -22,7 +22,7 @@ public class Main {
 			  
 		if(choise.equals("D") || choise.equals("d")) {
 			 runDemoDoctor(); 
-		} else if(choise.equals("PA") || choise.equals("pa") ) {
+		} else if(choise.equals("PA") || choise.equals("pa")) {
 			 runDemoPatient();
 		} else if(choise.equals("M") || choise.equals("m")) {
 			 runDemoMedicine();		
@@ -47,6 +47,7 @@ public class Main {
 			System.out.println("Welcome to the page DOCTOR");
 			System.out.println("Welcome to our hospital");
 			System.out.println("Follow the instructions and complete our application:");
+			
 			try(Scanner sc = new Scanner(System.in)){
 				
 				System.out.println("Please enter your firstname:");
@@ -66,10 +67,50 @@ public class Main {
 				System.out.println("Your registration is done. Plese check the data once more.");
 				System.out.println("Your firstname and lastname:" + doctor.getFirstName() + "\t" + doctor.getLastName() );
 				System.out.println("Year of birth:" + doctor.getBirthyear());
-				System.out.println("You are employed full-time:" + doctor.getisFullTimeEmployee() );
+				System.out.println("You are employed full-time:" + doctor.getIsFullTimeEmployee() );
 				System.out.println("Your specialization:" + doctor.getSpecialization());
 				System.out.println("Your qualification:" + doctor.getQualification());
+				System.out.println();
+				System.out.println();
+
+				try(Scanner scc = new Scanner(System.in)) {
+					
+					System.out.println("If your data is coorect and you wish to continue, choose another option!");
+					System.out.println("If your data is coorect and you wish to exit, choose BR");
+					System.out.println("If your data is not correct, go to <DOCTOR> page again!");
+					System.out.println("If you want to go to < DOCTOR > page, enter D");
+					System.out.println("If you want to go to < PATIENT > page, enter PA");
+					System.out.println("If you want to go to < MEDICINE > page, enter M");
+					System.out.println("If you want to go to < PHARMACIES > page, enter PH");
+					System.out.println("If you want to schedule a treatment, enter SC");
+
+					System.out.println("Please, enter the path for your choise!");
+					
+					String choise = scc.next();
+						  
+					if(choise.equals("D") || choise.equals("d")) {
+						 runDemoDoctor(); 
+					} else if(choise.equals("PA") || choise.equals("pa")) {
+						 runDemoPatient();
+					} else if(choise.equals("M") || choise.equals("m")) {
+						 runDemoMedicine();		
+					} else if(choise.equals("PH") || choise.equals("ph")) {
+						 runDemoPharmacie();
+					} else if(choise.equals("SC") || choise.equals("sc")) {
+						 runDemoScheduling();
+					} else if(choise.equals("br") || choise.equals("BR")) {
+					} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc") && !choise.equals("BR") && !choise.equals("br")) {
+						System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
+						
+						 System.out.println("Please, TRY AGAIN");
+						 System.out.println();
+						 choise = sc.next();
+					 }
+
+				}
+				
 			}
+			
 		}
 		
 		private static void runDemoPatient() {
@@ -103,7 +144,7 @@ public class Main {
 				String gender = sc.next();
 				
 				System.out.println("Enter patient ID");
-				String ID = sc.next();
+				String id = sc.next();
 				
 				System.out.println("Enter patient address");
 				String address = sc.next();
@@ -117,37 +158,157 @@ public class Main {
 				System.out.println("Enter patient phoneNumber");
 				String phoneNumber = sc.next();
 				
-				Patient patient = new Patient(name, parentName, surname, jmbg, dateOfBirth, placeOfBirth, gender, ID, address, town, citizenship, phoneNumber  );
+				Patient patient = new Patient(name, parentName, surname, jmbg, dateOfBirth, placeOfBirth, gender, id, address, town, citizenship, phoneNumber  );
 				System.out.println("You registration is done. Plese check the data once more.");
-				System.out.println("Patient name and surname: " + patient.getName() + "\t" + patient.getSurname() );
-				//System.out.println("Patient jmbg" +  );
+				System.out.println("Patient name and surname: " + patient.getName() + "\t" + patient.getSurname());
+				System.out.println("Patient parent's name: " + patient.getParentName());
+				System.out.println("Patient jmbg: " + patient.getJmbg()  );
 				System.out.println("Date and place of birth: "+ patient.getPlaceOfBirth() + "\t" + patient.getDateOfBirth());
 				System.out.println("Gender: " + patient.getGender());
-				System.out.println("Healcare card ID: " + patient.getID());
-				System.out.println("Address: " + patient.getAddress() + "\t" + patient.getTown() );
-				System.out.println("Citizenship: " + patient.getCitizenship() );
-				System.out.println("Patient phone number: " + patient.getPhoneNumber() );
+				System.out.println("Healcare card ID: " + patient.getId());
+				System.out.println("Address: " + patient.getAddress() + "\t" + patient.getTown());
+				System.out.println("Citizenship: " + patient.getCitizenship());
+				System.out.println("Patient phone number: " + patient.getPhoneNumber());
+				System.out.println();
+				System.out.println();
 
+				try(Scanner scc = new Scanner(System.in)) {
+					
+					System.out.println("If your data is coorect and you wish to continue, choose another option!");
+					System.out.println("If your data is coorect and you wish to exit, choose BR");
+					System.out.println("If your data is not correct, go to <PATIENT> page again!");
+					System.out.println("If you want to go to < DOCTOR > page, enter D");
+					System.out.println("If you want to go to < PATIENT > page, enter PA");
+					System.out.println("If you want to go to < MEDICINE > page, enter M");
+					System.out.println("If you want to go to < PHARMACIES > page, enter PH");
+					System.out.println("If you want to schedule a treatment, enter SC");
+
+					System.out.println("Please, enter the path for your choise!");
+					
+					String choise = scc.next();
+						  
+					if(choise.equals("D") || choise.equals("d")) {
+						 runDemoDoctor(); 
+					} else if(choise.equals("PA") || choise.equals("pa")) {
+						 runDemoPatient();
+					} else if(choise.equals("M") || choise.equals("m")) {
+						 runDemoMedicine();		
+					} else if(choise.equals("PH") || choise.equals("ph")) {
+						 runDemoPharmacie();
+					} else if(choise.equals("SC") || choise.equals("sc")) {
+						 runDemoScheduling();
+					} else if(choise.equals("br") || choise.equals("BR")) {
+					} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc") && !choise.equals("BR") && !choise.equals("br")) {
+						System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
+						
+						 System.out.println("Please, TRY AGAIN");
+						 System.out.println();
+						 choise = sc.next();
+					 }
+
+				}
+				
 			}
+			
 		}
 		
 		private static void runDemoMedicine() {
 
 			System.out.println("Welcome to the page MEDICINE");
+			
+			//TO DO Basic input/output
+			
+			System.out.println();
+			System.out.println();
 
+			try(Scanner scc = new Scanner(System.in)) {
+				
+				System.out.println("If your data is coorect and you wish to continue, choose another option!");
+				System.out.println("If your data is coorect and you wish to exit, choose BR");
+				System.out.println("If your data is not correct, go to <MEDICINE> page again!");
+				System.out.println("If you want to go to < DOCTOR > page, enter D");
+				System.out.println("If you want to go to < PATIENT > page, enter PA");
+				System.out.println("If you want to go to < MEDICINE > page, enter M");
+				System.out.println("If you want to go to < PHARMACIES > page, enter PH");
+				System.out.println("If you want to schedule a treatment, enter SC");
+
+				System.out.println("Please, enter the path for your choise!");
+				
+				String choise = scc.next();
+					  
+				if(choise.equals("D") || choise.equals("d")) {
+					 runDemoDoctor(); 
+				} else if(choise.equals("PA") || choise.equals("pa")) {
+					 runDemoPatient();
+				} else if(choise.equals("M") || choise.equals("m")) {
+					 runDemoMedicine();		
+				} else if(choise.equals("PH") || choise.equals("ph")) {
+					 runDemoPharmacie();
+				} else if(choise.equals("SC") || choise.equals("sc")) {
+					 runDemoScheduling();
+				} else if(choise.equals("br") || choise.equals("BR")) {
+				} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc") && !choise.equals("BR") && !choise.equals("br")) {
+					System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
+					
+					 System.out.println("Please, TRY AGAIN");
+					 System.out.println();
+					 choise = scc.next();
+				 }
+
+			}
+			
 		}
 		
 		private static void runDemoPharmacie() {
+			
 			System.out.println("Welcome to the page PHARMACIES");
+			//TO DO basic input/output
+			
+			System.out.println();
+			System.out.println();
 
+			try(Scanner scc = new Scanner(System.in)) {
+				
+				System.out.println("If your data is coorect and you wish to continue, choose another option!");
+				System.out.println("If your data is coorect and you wish to exit, choose BR");
+				System.out.println("If your data is not correct, go to <PHARMACIES> page again!");
+				System.out.println("If you want to go to < DOCTOR > page, enter D");
+				System.out.println("If you want to go to < PATIENT > page, enter PA");
+				System.out.println("If you want to go to < MEDICINE > page, enter M");
+				System.out.println("If you want to go to < PHARMACIES > page, enter PH");
+				System.out.println("If you want to schedule a treatment, enter SC");
+
+				System.out.println("Please, enter the path for your choise!");
+				
+				String choise = scc.next();
+					  
+				if(choise.equals("D") || choise.equals("d")) {
+					 runDemoDoctor(); 
+				} else if(choise.equals("PA") || choise.equals("pa")) {
+					 runDemoPatient();
+				} else if(choise.equals("M") || choise.equals("m")) {
+					 runDemoMedicine();		
+				} else if(choise.equals("PH") || choise.equals("ph")) {
+					 runDemoPharmacie();
+				} else if(choise.equals("SC") || choise.equals("sc")) {
+					 runDemoScheduling();
+				} else if(choise.equals("br") || choise.equals("BR")) {
+				} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc") && !choise.equals("BR") && !choise.equals("br")) {
+					System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
+					
+					 System.out.println("Please, TRY AGAIN");
+					 System.out.println();
+					 choise = scc.next();
+				 }
+
+			}
+			
 		}
 		
-		private static void runDemoScheduling( ) {
+		private static void runDemoScheduling() {
 			
 			System.out.println("Welcome to the page SCHEDULING");
-			System.out.println("Please, insert necessary data in order to schedule your treatment...");
-			
-			//while (true) {
+			System.out.println("Please, insert necessary data in order to schedule your treatment...");			
 				
 			try(Scanner sc = new Scanner(System.in)){
 				
@@ -164,38 +325,59 @@ public class Main {
 				String jmbg = sc.next();
 				
 				System.out.println("Enter patient ID");
-				String ID = sc.next();
+				String id = sc.next();
 				
-				Patient scheduling = new Patient(name, parentName, surname, jmbg, ID );
+				Patient scheduling = new Patient(name, parentName, surname, jmbg, id);
 
 				System.out.println("You registration is done. Plese check the data once more.");
-				System.out.println("Patient name and surname: " + scheduling.getName() + "\t" + scheduling.getSurname() );
-				//System.out.println("Patient jmbg: " +  );
-				System.out.println("Healcare card ID: " + scheduling.getID());
+				System.out.println("Patient name and surname: " + scheduling.getName() + "\t" + scheduling.getSurname());
+				System.out.println("Patient parent's name: " + scheduling.getParentName());
+				System.out.println("Patient jmbg: " + scheduling.getJmbg());
+				System.out.println("Healcare card ID: " + scheduling.getId());
 				
 				System.out.println("Please, check your data");
 				System.out.println("If it is correct, enter yes");
 				System.out.println("If it is incorrect, enter no and fill in the form again");
+				System.out.println();
+				System.out.println();
 
-				/*String check = sc.next(); 
-				
-				if (check.equals("yes")) {
-					break;
-				} else while (!check.equals("no") && !check.equals("yes")) {
-					System.out.println("You entered the wrong word, plase response with yes or no!");
-					System.out.println("Is the data correct? yes/no");
-					System.out.println();
-					check = sc.next();
-				}
-				
-				 if (check.equals("yes")) {
-						break;
+				try(Scanner scc = new Scanner(System.in)) {
+					
+					System.out.println("If your data is coorect and you wish to continue, choose another option!");
+					System.out.println("If your data is coorect and you wish to exit, choose BR");
+					System.out.println("If your data is not correct, go to <SCHEDULING> page again!");
+					System.out.println("If you want to go to < DOCTOR > page, enter D");
+					System.out.println("If you want to go to < PATIENT > page, enter PA");
+					System.out.println("If you want to go to < MEDICINE > page, enter M");
+					System.out.println("If you want to go to < PHARMACIES > page, enter PH");
+					System.out.println("If you want to schedule a treatment, enter SC");
+
+					System.out.println("Please, enter the path for your choise!");
+					
+					String choise = scc.next();
+						  
+					if(choise.equals("D") || choise.equals("d")) {
+						 runDemoDoctor(); 
+					} else if(choise.equals("PA") || choise.equals("pa") ) {
+						 runDemoPatient();
+					} else if(choise.equals("M") || choise.equals("m")) {
+						 runDemoMedicine();		
+					} else if(choise.equals("PH") || choise.equals("ph")) {
+						 runDemoPharmacie();
+					} else if(choise.equals("SC") || choise.equals("sc")) {
+						 runDemoScheduling();
+					} else if(choise.equals("br") || choise.equals("BR")) {
+					} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc") && !choise.equals("BR") && !choise.equals("br")) {
+						System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
 						
+						 System.out.println("Please, TRY AGAIN");
+						 System.out.println();
+						 choise = sc.next();
+					}
+				
 				}
-							 
-			}*/
 			
-		}
+			}
 			
 	}
 		
