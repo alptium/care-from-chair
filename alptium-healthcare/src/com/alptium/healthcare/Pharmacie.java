@@ -10,8 +10,8 @@ public class Pharmacie {
 	private String onlineShoping; 
 	private String nameOfOwner;
 	
-    public runDemoPharmacie (String nameOfPharmacie, int registerNumber, String city, String cityMunicipality, String phoneNumber, String address, String onlineShoping, String nameOfOwner) {
-        this.nameOfPharmacie = name;
+    public Pharmacie (String nameOfPharmacie, int registerNumber, String city, String cityMunicipality, String phoneNumber, String address, String onlineShoping, String nameOfOwner) {
+        this.nameOfPharmacie = nameOfPharmacie;
         this.registerNumber = registerNumber;
         this.city = city;
         this.cityMunicipality = cityMunicipality;

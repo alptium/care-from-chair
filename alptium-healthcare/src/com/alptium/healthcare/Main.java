@@ -276,11 +276,11 @@ public class Main {
 				System.out.println("Please enter your Pharmacie name:");
 				String nameOfPharmacie = sc.next();
 				System.out.println("Please enter registration number of Pharmacie:");
-				String registrarNumber = sc.nextInt();
+				int registerNumber = sc.nextInt();
 				System.out.println("Please enter the city where your Pharmacie is located:");
-				int city=sc.nextInt();
+				String city=sc.next();
 				System.out.println("Please enter the cityMunicipality  where your Pharmacie is located:");
-				boolean cityMunicipality  = sc.nextBoolean();
+				String cityMunicipality  = sc.next();
 				System.out.println("Please enter phone number of your Pharmacie:");
 				String phoneNumber= sc.next();
 				System.out.println("Please enter your adress of your Pharmacie:");
@@ -290,11 +290,11 @@ public class Main {
 				System.out.println("Please enter name of owner:");
 				String nameOfOwner  = sc.next();
 				
-				Pharmacie pharmacie = new Pharmacie(String nameOfPharmacie, int registerNumber, String city, String cityMunicipality, String phoneNumber, String address, String onlineShoping, String nameOfOwner);
+				Pharmacie pharmacie = new Pharmacie(nameOfPharmacie, registerNumber, city, cityMunicipality,  phoneNumber, address, onlineShoping, nameOfOwner);
 				System.out.println("Your registration is done. Plese check the data once more.");
-				System.out.println("Your name of Pharmacie:" + pharmacie.getNameOfPharmacie() );
-				System.out.println("Your registar number is:" + pharmacie.getRegisterNumber()());
-				System.out.println("City and cityMuniciplatity of Phramacie is:" + pharmacie.setCity() + pharmacie.getCityMunicipality());
+				System.out.println("Your name of Pharmacie:" + pharmacie.getNameOfPharmacie());
+				System.out.println("Your registar number is:" + pharmacie.getRegisterNumber());
+				System.out.println("City and cityMuniciplatity of Phramacie is:" + pharmacie.getCity() + pharmacie.getCityMunicipality());
 				System.out.println("Phone number and adress of your Pharmacie is:" + pharmacie.getPhoneNumber() + pharmacie.getAddress());
 				System.out.println("Your Pharmacie has online shoping option:" + pharmacie.getOnlineShoping());
 				System.out.println("Name of owner is:" + pharmacie.getNameOfOwner());
@@ -335,7 +335,7 @@ public class Main {
 				 }
 
 			}
-			
+			}
 		}
 		
 		private static void runDemoScheduling() {
