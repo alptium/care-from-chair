@@ -35,7 +35,7 @@ public class Doctor {
 	public void setBirthyear(int birthYear) {
 		this.birthYear = birthYear;
 	}
-	public boolean isFullTimeEmployer() {
+	public boolean getIsFullTimeEmployee() {
 		return isFullTimeEmployee;
 	}
 	public void setFullTimeEmployer(boolean isFullTimeEmployee) {
