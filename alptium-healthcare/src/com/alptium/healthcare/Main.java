@@ -1,6 +1,7 @@
 package com.alptium.healthcare;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 	
@@ -120,6 +121,9 @@ public class Main {
 			System.out.println("For registration, insert personal data for a patient...");
 			System.out.println();
 			
+			ArrayList<Patient> PatientList = new ArrayList<>();
+
+			
 			try(Scanner sc = new Scanner(System.in)){
 				
 				System.out.println("Enter patient name");
@@ -158,7 +162,7 @@ public class Main {
 				System.out.println("Enter patient phoneNumber");
 				String phoneNumber = sc.next();
 				
-				Patient patient = new Patient(name, parentName, surname, jmbg, dateOfBirth, placeOfBirth, gender, id, address, town, citizenship, phoneNumber  );
+				Patient patient = new Patient(name, parentName, surname, jmbg, dateOfBirth, placeOfBirth, gender, id, address, town, citizenship, phoneNumber );
 				System.out.println("You registration is done. Plese check the data once more.");
 				System.out.println("Patient name and surname: " + patient.getName() + "\t" + patient.getSurname());
 				System.out.println("Patient parent's name: " + patient.getParentName());
@@ -171,7 +175,9 @@ public class Main {
 				System.out.println("Patient phone number: " + patient.getPhoneNumber());
 				System.out.println();
 				System.out.println();
-
+				
+				
+				
 				try(Scanner scc = new Scanner(System.in)) {
 					
 					System.out.println("If your data is coorect and you wish to continue, choose another option!");
@@ -198,6 +204,7 @@ public class Main {
 					} else if(choise.equals("SC") || choise.equals("sc")) {
 						 runDemoScheduling();
 					} else if(choise.equals("br") || choise.equals("BR")) {
+						PatientList.add(patient);
 					} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc") && !choise.equals("BR") && !choise.equals("br")) {
 						System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
 						
