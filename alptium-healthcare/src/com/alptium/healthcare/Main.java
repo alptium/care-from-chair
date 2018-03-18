@@ -176,8 +176,6 @@ public class Main {
 				System.out.println();
 				System.out.println();
 				
-				
-				
 				try(Scanner scc = new Scanner(System.in)) {
 					
 					System.out.println("If your data is coorect and you wish to continue, choose another option!");
@@ -335,8 +333,10 @@ public class Main {
 				 }
 
 			}
-			}
+			
 		}
+			
+	}
 		
 		private static void runDemoScheduling() {
 			
@@ -374,43 +374,43 @@ public class Main {
 				System.out.println();
 				System.out.println();
 
-				try(Scanner scc = new Scanner(System.in)) {
+			try(Scanner scc = new Scanner(System.in)) {
 					
-					System.out.println("If your data is coorect and you wish to continue, choose another option!");
-					System.out.println("If your data is coorect and you wish to exit, choose BR");
-					System.out.println("If your data is not correct, go to <SCHEDULING> page again!");
-					System.out.println("If you want to go to < DOCTOR > page, enter D");
-					System.out.println("If you want to go to < PATIENT > page, enter PA");
-					System.out.println("If you want to go to < MEDICINE > page, enter M");
-					System.out.println("If you want to go to < PHARMACIES > page, enter PH");
-					System.out.println("If you want to schedule a treatment, enter SC");
+				System.out.println("If your data is coorect and you wish to continue, choose another option!");
+				System.out.println("If your data is coorect and you wish to exit, choose BR");
+				System.out.println("If your data is not correct, go to <SCHEDULING> page again!");
+				System.out.println("If you want to go to < DOCTOR > page, enter D");
+				System.out.println("If you want to go to < PATIENT > page, enter PA");
+				System.out.println("If you want to go to < MEDICINE > page, enter M");
+				System.out.println("If you want to go to < PHARMACIES > page, enter PH");
+				System.out.println("If you want to schedule a treatment, enter SC");
 
-					System.out.println("Please, enter the path for your choise!");
+				System.out.println("Please, enter the path for your choise!");
 					
-					String choise = scc.next();
-						  
-					if(choise.equals("D") || choise.equals("d")) {
-						 runDemoDoctor(); 
-					} else if(choise.equals("PA") || choise.equals("pa") ) {
-						 runDemoPatient();
-					} else if(choise.equals("M") || choise.equals("m")) {
-						 runDemoMedicine();		
-					} else if(choise.equals("PH") || choise.equals("ph")) {
-						 runDemoPharmacie();
-					} else if(choise.equals("SC") || choise.equals("sc")) {
-						 runDemoScheduling();
-					} else if(choise.equals("br") || choise.equals("BR")) {
-					} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc") && !choise.equals("BR") && !choise.equals("br")) {
-						System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
+				String choise = scc.next();
+						 
+				if(choise.equals("D") || choise.equals("d")) {
+					 runDemoDoctor(); 
+				} else if(choise.equals("PA") || choise.equals("pa") ) {
+					 runDemoPatient();
+				} else if(choise.equals("M") || choise.equals("m")) {
+					 runDemoMedicine();		
+				} else if(choise.equals("PH") || choise.equals("ph")) {
+					 runDemoPharmacie();
+				} else if(choise.equals("SC") || choise.equals("sc")) {
+					 runDemoScheduling();
+				} else if(choise.equals("br") || choise.equals("BR")) {
+				} else while (!choise.equals("D") && !choise.equals("d") && !choise.equals("PA") && !choise.equals("pa") && !choise.equals("M") && !choise.equals("m") && !choise.equals("PH") && !choise.equals("ph") && !choise.equals("SC") && !choise.equals("sc") && !choise.equals("BR") && !choise.equals("br")) {
+					System.out.println("THE PATH YOU ENTERED IS INCORRECT!");
 						
-						 System.out.println("Please, TRY AGAIN");
-						 System.out.println();
-						 choise = sc.next();
-					}
-				
+					 System.out.println("Please, TRY AGAIN");
+					 System.out.println();
+					 choise = sc.next();
 				}
-			
+				
 			}
+			
+		}
 			
 	}
 		
